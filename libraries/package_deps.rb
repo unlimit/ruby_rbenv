@@ -42,8 +42,10 @@ class Chef
           %w(gcc bzip2 openssl-devel libffi-devel readline-devel zlib-devel gdbm-devel ncurses-devel make)
         when 'debian'
           if platform?('ubuntu') && node['platform_version'].to_i >= 20
+            puts "Ubuntu 20"
             %w(gcc autoconf bison build-essential libssl-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 make)
           elsif platform?('ubuntu') && node['platform_version'].to_i >= 18
+            puts "Ubuntu 18"
             %w(gcc autoconf bison build-essential libssl-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev make)
           elsif platform?('debian') && node['platform_version'].to_i >= 10
             %w(gcc autoconf bison build-essential libssl-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev make)
